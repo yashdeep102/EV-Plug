@@ -1,6 +1,6 @@
-if (process.env.NODE_ENV !== "production") { //environment variable
-    require('dotenv').config();
-}
+// if (process.env.NODE_ENV !== "production") { //environment variable
+//     require('dotenv').config();
+// }
 
 const express = require('express');
 const path = require('path');
@@ -38,16 +38,8 @@ app.set('views', path.join(__dirname, '/views'));
 app.engine('ejs', ejsMate);
 //setting up static files
 app.use(express.static(path.join(__dirname, 'public')));
-//setting up mongo-connect
-// const store = new MongoStore({
-//     url: dbURL,
-//     secret: 'thisshouldbeabettersecret!',
-//     touchAfter: 24 * 60 * 60
-// })
-// store.on("error", function (e) {
-//     console.log("SESSION STORE ERROR", e);
-// })
-//setting up session
+
+
 const secret = process.env.SESSION_SECRET || 'thisshouldbeabettersecret!'
 const sessionConfig = {
     store: MongoStore.create({
