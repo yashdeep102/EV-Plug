@@ -17,8 +17,8 @@ const MongoStore = require('connect-mongo');
 const ErrorClass = require('./errorUtils/ErrorClass');
 const User = require('./models/userModel');
 // 
-// const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/ev-plug';
-const dbURL = 'mongodb://localhost:27017/ev-plug';
+const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/ev-plug';
+// const dbURL = 'mongodb://localhost:27017/ev-plug';
 //routes
 const stationRoutes = require('./routes/stationRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
