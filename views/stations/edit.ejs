@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <h1 class="text-center">Edit Charging Station</h1>
+        <div class="col-md-6 offset-md-3">
+            <form class="needs-validation" action="/stations/<%= station._id %>?_method=PUT" method="POST" novalidate
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="station[title]"
+                        value="<%= station.title %>">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="station[location]"
+                        value="<%= station.location %>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">+91</span>
+                        <input class="form-control" type="text" id="phone" name="station[phone]"
+                            value="<%= station.phone %>" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="details">Details</label>
+                    <textarea class="form-control" type="text" id="details" name="station[details]"
+                        required><%= station.details %> </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add more images</label>
+                    <input class="form-control" type="file" id="image" multiple name="image">
+                </div>
+
+                <div class="mb-3">
+                    <% station.images.forEach(function(img, i){ %>
+                        <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline mt-1" >
+                            <input class="form-check-input" type="checkbox" name="deleteImages[]" value="<%= img.filename %>"
+                                id="image-<%= i %>">
+                                <label class="form-check-label" for="image-<%= i %>">Delete?</label>
+                        </div>
+                        
+                        <% }) %>
+                </div>
+
+
+
+                <button class="btn btn-success mb-3">Update Charging Station</button>
+            </form>
+            <a href="/stations/<%= station._id %>">Back to Station</a>
+        </div>
+    </div>

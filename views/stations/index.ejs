@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %>
+
+
+<div id="cluster-map"></div>
+
+
+    <h1>All EV-Stations</h1>
+    <div>
+        <a href="/stations/new">Add Station</a>
+    </div>
+
+    <% for(let station of stations){ %>
+
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if(station.images.length){ %> 
+                    <img class="img-fluid" src="<%= station.images[0].url %>" alt="Image not found">
+                    <% }else{ %> 
+
+                        <% } %> 
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= station.title %></h5>
+                        <p class="card-text"><small class="text-muted"><%= station.location %></small></p>
+                        <p class="card-text"><%= station.details %></p>
+                        <a class="btn btn-primary" href="/stations/<%= station._id %>">View <%= station.title %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+    </a>
+
+    <script>
+        const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+        const stations = {features: <%-JSON.stringify(stations)%>};
+
+    </script>
+
+    <script src="/staticJS/clusterMap.js"></script>
+
+    
