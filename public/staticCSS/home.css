@@ -1,0 +1,33 @@
+#title{
+    background: hsla(208, 7%, 55%, 1);
+
+    background: linear-gradient(90deg, hsla(208, 7%, 55%, 1) 0%, hsla(191, 5%, 40%, 1) 100%);
+    
+    background: -moz-linear-gradient(90deg, hsla(208, 7%, 55%, 1) 0%, hsla(191, 5%, 40%, 1) 100%);
+    
+    background: -webkit-linear-gradient(90deg, hsla(208, 7%, 55%, 1) 0%, hsla(191, 5%, 40%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#858E96", endColorstr="#60696B", GradientType=1 ); 
+    height: 100vh;
+}
+
+.container-fluid{
+    padding: 3% 10%;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
+    color: #fff;
+}
+
+img{
+    
+     position: absolute;
+}
+
+footer{
+    position: relative;
+    z-index: 1;
+}
