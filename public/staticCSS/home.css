@@ -1,3 +1,9 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 #title{
     background: hsla(208, 7%, 55%, 1);
 
@@ -8,7 +14,7 @@
     background: -webkit-linear-gradient(90deg, hsla(208, 7%, 55%, 1) 0%, hsla(191, 5%, 40%, 1) 100%);
     
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#858E96", endColorstr="#60696B", GradientType=1 ); 
-    height: 100vh;
+    /* height:fit-content; */
 }
 
 .container-fluid{
@@ -25,9 +31,10 @@ h1{
 img{
     
      position: absolute;
-}
+} 
 
-footer{
+ footer{
     position: relative;
     z-index: 1;
+    margin-top: auto;
 }
