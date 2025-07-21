@@ -13,6 +13,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const mongoSanitize = require('express-mongo-sanitize');
 const MongoStore = require('connect-mongo');
+const reloadWebsiteScript = require('./public/staticJS/reloadWebsiteScript.js');
 //local dependencies
 const ErrorClass = require('./errorUtils/ErrorClass');
 const User = require('./models/userModel');
@@ -119,6 +120,7 @@ app.use((err, req, res, next) => {
     // res.status(statusCode).send(message);
 })
 
+setInterval(reloadWebsiteScript, 600000); // Interval in milliseconds (10 mins)
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
