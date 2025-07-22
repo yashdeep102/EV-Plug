@@ -1,5 +1,5 @@
 const axios = require('axios');
-const url = `https://ev-plug.onrender.com`;
+const url = `https://ev-plug-1.onrender.com`;
 
 //Reloader Function
 module.exports = function reloadWebsite() {
